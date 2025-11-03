@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barriecito&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-londrina: "Londrina Shadow", sans-serif;
+  --font-raleway: "Raleway", sans-serif;
+  --font-barriecito: "Barriecito", system-ui;
+  --color-black: #03120e;
+  --color-white: #f8ffe5;
+  --color-darkgreen: #3b5249;
+  --color-purple: #34252f;
+  --color-green: #7dde92;
+  --color-red: #c3423f;
+}
+
+@layer components {
+  .select {
+    @apply w-full bg-transparent border border-slate-200 rounded pl-3 pr-8 py-2 transition duration-300 focus:outline-none focus:border-slate-400 shadow-sm focus:shadow-md cursor-pointer;
+  }
+
+  .shadow-border {
+    box-shadow: 0 0 4px #03120e6b;
+  }
+}
