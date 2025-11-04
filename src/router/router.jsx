@@ -4,7 +4,7 @@ import { createHashRouter } from "react-router-dom";
 import HomePage from "../pages/HomePage.jsx";
 import ScoreboardPage from "../pages/ScoreboardPage.jsx";
 import App from "../App.jsx";
-import Quiz from "../pages/Quiz.jsx";
+import QuizPage from "../pages/QuizPage.jsx";
 
 const router = createHashRouter([
   {
@@ -18,7 +18,7 @@ const router = createHashRouter([
       },
       {
         path: "quiz",
-        element: <Quiz />,
+        element: <QuizPage />,
       },
       {
         path: "scoreboard",

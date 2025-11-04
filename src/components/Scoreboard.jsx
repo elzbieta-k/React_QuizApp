@@ -47,7 +47,7 @@ export default function Scoreboard() {
                     className="relative bg-white text-black px-4 py-2 rounded-md group cursor-pointer hover:bg-gray-100 transition"
                   >
                     <p className="font-semibold">
-                      {r.name} - {percent}%
+                      {r.name ? r.name : "Anonymous"} - {percent}%
                     </p>
 
                     {/* Tooltip */}

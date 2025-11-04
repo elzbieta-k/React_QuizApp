@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useQuizStore from "../store/QuizStore";
-import ProgressBar from "../components/ProgressBar";
+import ProgressBar from "./ProgressBar";
 import useLocalStorage from "../hooks/useLocalStorage";
 
 export default function Quiz() {
@@ -64,6 +64,8 @@ const [isSaved, setIsSaved] = useState(false)
     setResults((prev) => [...prev, newResult]);
     setIsSaved((prev) => !prev)
   };
+
+  
   return (
     <section className="h-[85vh]  lg:w-4xl flex flex-col items-center font-raleway mx-auto lg:pt-20">
       {isLoading ? (
@@ -126,7 +128,7 @@ const [isSaved, setIsSaved] = useState(false)
             <p>{Math.floor((score / amount) * 100)}%</p>
           </div>
           <div className="text-white flex flex-col items-center pt-5">
-            <p className="">Congratulations {name}!</p>
+            <p className="">Congratulations {name ? name : "Anonymous"}!</p>
             <p>
               Correct {score} out of {amount} questions
             </p>
