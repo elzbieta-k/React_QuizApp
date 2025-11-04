@@ -19,12 +19,16 @@ export default function Scoreboard() {
   });
 
   if (!results.length) {
-    return <p className="text-white text-center mt-4">No results yet 😅</p>;
+    return (
+      <div className="min-h-[85vh] pt-10">
+        <p className="text-white text-center mt-4">No results yet 😅</p>
+      </div>
+    );
   }
 
   return (
-    <div className="min-h-[85vh]">
-      <div className="font-raleway text-white flex flex-col items-center gap-6 w-[90%] md:w-[60%] mx-auto">
+    <div className="min-h-[85vh] pt-10 w-[85vw] max-w[1024px] mx-auto">
+      <div className="font-raleway text-white flex flex-col items-center md:items-start gap-6 w-[90%] md:flex-row mx-auto">
         {Object.entries(groupedResults).map(([difficulty, group]) => (
           <div
             key={difficulty}
@@ -34,7 +38,7 @@ export default function Scoreboard() {
               {difficulty.toUpperCase()}
             </h2>
 
-            <ul className="flex flex-col gap-2">
+            <ul className="flex flex-col  gap-2">
               {group.map((r, i) => {
                 const percent = Math.round((r.score / r.amount) * 100);
                 return (

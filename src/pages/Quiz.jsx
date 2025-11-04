@@ -66,7 +66,7 @@ export default function Quiz() {
   return (
     <section className="h-[85vh]  lg:w-4xl flex flex-col items-center font-raleway mx-auto lg:pt-20">
       {isLoading ? (
-        <p>loading...</p>
+        <p className="text-white">Loading...</p>
       ) : error ? (
         <p className="text-red-500">Something went wrong!</p>
       ) : questions.length === 0 ? (
@@ -75,10 +75,10 @@ export default function Quiz() {
         <div className="flex flex-col items-center ">
           <p className="text-white pb-3 text-left">YOUR SCORE: {score}</p>
           <ProgressBar progress={(currentQuestionIndex / amount) * 100} />
-          <p className="text-white text-center">
+          <p className="text-white text-center pt-2">
             Question: {currentQuestionIndex + 1} / {amount}
           </p>
-          <div className="bg-white w-[90vw] lg:w-4xl rounded-xl flex flex-col items-center pt-5 pb-10 pl-5 pr-5 mt-5 lg:pb-15">
+          <div className="bg-white w-[90vw] lg:w-4xl rounded-xl flex flex-col items-center g-2 pt-5 pb-10 pl-5 pr-5 mt-5 lg:pb-15">
             <p>{currentQuestion.category}</p>
             <p className="p-3 pb-5 font-bold text-center">
               {currentQuestion.question}
@@ -86,7 +86,7 @@ export default function Quiz() {
             <div className="flex flex-col w-full items-center md:flex-row ">
               {currentQuestion.answers.map((answer, i) => {
                 let btnStyle =
-                  " border-none shadow-border p-2 rounded-xl w-[90%] md:h-[56px] m-1 cursor-pointer";
+                  " border-none shadow-border p-2 rounded-xl w-[90%] md:w-[24%] md:mx-auto md:justify-center md:min-h-[56px] m-1 cursor-pointer";
 
                 if (isAnswered) {
                   if (answer === currentQuestion.correct_answer) {
@@ -124,7 +124,7 @@ export default function Quiz() {
             <p>Your score</p>
             <p>{Math.floor((score / amount) * 100)}%</p>
           </div>
-          <div className="text-white">
+          <div className="text-white flex flex-col items-center pt-5">
             <p className="">Congratulations {name}!</p>
             <p>
               Correct {score} out of {amount} questions
@@ -132,7 +132,12 @@ export default function Quiz() {
             <p>Category: {quizInfo?.category}</p>
             <p>Difficulty: {difficulty}</p>
             <p>Type: {type}</p>
-            <button className="bg-purple text-white rounded-2xl w-full sm:w-80 mx-auto p-2 font-bold mt-5 cursor-pointer" onClick={handleSaveResults}>Save my results</button>
+            <button
+              className="bg-purple text-white rounded-2xl w-full sm:w-80 mx-auto p-2 font-bold mt-5 cursor-pointer"
+              onClick={handleSaveResults}
+            >
+              Save my results
+            </button>
           </div>
         </div>
       )}
