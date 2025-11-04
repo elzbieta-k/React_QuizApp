@@ -25,7 +25,7 @@ export default function SettingsForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setSettings((prev) => ({ ...prev, [name]: value }));
+    setSettings((prev) => ({ ...prev, [name]: value.trim() }));
   };
 
   const handleSubmit = (e) => {
@@ -136,7 +136,7 @@ export default function SettingsForm() {
         <button
           type="submit"
           onClick={handleSubmit}
-          className="bg-purple text-white rounded-xl w-full p-2 sm:w-70 "
+          className="bg-purple text-white rounded-xl w-full p-2 sm:w-70 cursor-pointer"
         >
           Start Quiz
         </button>
