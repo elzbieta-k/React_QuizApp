@@ -7,6 +7,7 @@ import ProgressBar from "./ProgressBar";
 import useLocalStorage from "../hooks/useLocalStorage";
 
 export default function Quiz() {
+  //Getting state from QuizStore
   const {
     questions,
     score,
@@ -19,6 +20,7 @@ export default function Quiz() {
     resetQuiz,
   } = useQuizStore();
 
+  
   const { state } = useLocation();
   const { category, amount, difficulty, type, name } = state;
 
@@ -50,7 +52,7 @@ export default function Quiz() {
   const quizInfo = questions?.[0];
 
   const [results, setResults] = useLocalStorage("quizResults", []);
-const [isSaved, setIsSaved] = useState(false)
+  const [isSaved, setIsSaved] = useState(false);
   const handleSaveResults = () => {
     const newResult = {
       name,
@@ -62,10 +64,9 @@ const [isSaved, setIsSaved] = useState(false)
       date: new Date().toISOString(),
     };
     setResults((prev) => [...prev, newResult]);
-    setIsSaved((prev) => !prev)
+    setIsSaved((prev) => !prev);
   };
 
-  
   return (
     <section className="h-[85vh]  lg:w-4xl flex flex-col items-center font-raleway mx-auto lg:pt-20">
       {isLoading ? (

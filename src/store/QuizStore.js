@@ -7,18 +7,20 @@ const useQuizStore = create((set) => ({
   selectedAnswer: null,
   isAnswered: false,
 
-  setQuestions: (decodedQuestions) => set({ questions: decodedQuestions,
-    currentQuestionIndex: 0,
-    score: 0,
-    selectedAnswer: null,
-    isAnswered: false
-   }),
+  setQuestions: (decodedQuestions) =>
+    set({
+      questions: decodedQuestions,
+      currentQuestionIndex: 0,
+      score: 0,
+      selectedAnswer: null,
+      isAnswered: false,
+    }),
 
   selectAnswer: (answer) => {
     set((state) => {
       const currentQuestion = state.questions[state.currentQuestionIndex];
       if (!currentQuestion) {
-        return { selectedAnswer: answer, isAnswered: true}
+        return { selectedAnswer: answer, isAnswered: true };
       }
       const isCorrect = answer === currentQuestion.correct_answer;
 
@@ -41,11 +43,11 @@ const useQuizStore = create((set) => ({
 
   resetQuiz: () =>
     set({
-        questions: [],
+      questions: [],
       currentQuestionIndex: 0,
       score: 0,
       selectedAnswer: null,
-      isAnswered: false
+      isAnswered: false,
     }),
 }));
 

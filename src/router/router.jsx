@@ -5,12 +5,13 @@ import HomePage from "../pages/HomePage.jsx";
 import ScoreboardPage from "../pages/ScoreboardPage.jsx";
 import App from "../App.jsx";
 import QuizPage from "../pages/QuizPage.jsx";
+import ErrorPage from "../pages/ErrorPage.jsx";
 
 const router = createHashRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <p>Error</p>,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -28,7 +29,7 @@ const router = createHashRouter([
   },
   {
     path: "*",
-    element: <p>Error</p>,
+    element: <ErrorPage />,
   },
 ]);
 
