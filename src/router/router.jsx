@@ -2,7 +2,7 @@ import { createHashRouter } from "react-router-dom";
 
 // routes
 import HomePage from "../pages/HomePage.jsx";
-import Scoreboard from "../pages/Scoreboard.jsx";
+import ScoreboardPage from "../pages/ScoreboardPage.jsx";
 import App from "../App.jsx";
 import Quiz from "../pages/Quiz.jsx";
 
@@ -22,7 +22,7 @@ const router = createHashRouter([
       },
       {
         path: "scoreboard",
-        element: <Scoreboard />,
+        element: <ScoreboardPage />,
       },
     ],
   },
