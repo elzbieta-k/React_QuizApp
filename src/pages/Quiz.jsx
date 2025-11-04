@@ -1,7 +1,7 @@
 import { fetchQuestions } from "../hooks/quizApi";
 import { useQuery } from "@tanstack/react-query";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useQuizStore from "../store/QuizStore";
 import ProgressBar from "../components/ProgressBar";
 import useLocalStorage from "../hooks/useLocalStorage";
@@ -50,7 +50,7 @@ export default function Quiz() {
   const quizInfo = questions?.[0];
 
   const [results, setResults] = useLocalStorage("quizResults", []);
-
+const [isSaved, setIsSaved] = useState(false)
   const handleSaveResults = () => {
     const newResult = {
       name,
@@ -62,6 +62,7 @@ export default function Quiz() {
       date: new Date().toISOString(),
     };
     setResults((prev) => [...prev, newResult]);
+    setIsSaved((prev) => !prev)
   };
   return (
     <section className="h-[85vh]  lg:w-4xl flex flex-col items-center font-raleway mx-auto lg:pt-20">
@@ -136,7 +137,7 @@ export default function Quiz() {
               className="bg-purple text-white rounded-2xl w-full sm:w-80 mx-auto p-2 font-bold mt-5 cursor-pointer"
               onClick={handleSaveResults}
             >
-              Save my results
+              {isSaved ? "Results saved" : "Save my results"}
             </button>
           </div>
         </div>
