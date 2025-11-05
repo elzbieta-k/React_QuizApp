@@ -1,17 +1,92 @@
-# React + Vite
+# React Trivia Quiz
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive quiz application built with modern React stack, featuring multiple categories, difficulty levels, and a persistent scoreboard.
+<img width="1920" height="868" alt="screencapture-localhost-5173-React-QuizApp-2025-11-05-10_14_23" src="https://github.com/user-attachments/assets/ee61e137-609f-4667-ae09-759ed843308d" />
 
-Currently, two official plugins are available:
+## Features
+- 🎯 Multiple quiz categories from Open Trivia DB
+- 🔄 Dynamic question loading and decoding
+- 📊 Real-time score tracking
+- 🏆 Persistent scoreboard using localStorage
+- 📱 Responsive design for all devices
+- 🌈 Modern UI with Tailwind CSS
+- 🔍 Error handling and loading states
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- React 18
+- Vite
+- React Router v6
+- Zustand (State Management)
+- TanStack Query
+- Tailwind CSS
+- Open Trivia Database API
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Clone the repository
+```powershell
+git clone https://github.com/yourusername/React_Project_Quiz.git
+cd React_Project_Quiz
+```
 
-## Expanding the ESLint configuration
+2. Install dependencies
+```powershell
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# React_QuizApp
+3. Start development server
+```powershell
+npm run dev
+```
+
+Visit `http://localhost:5173` to see the app.
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Create production build
+- `npm run preview` - Preview production build locally
+- `npm run test` - Run tests (if configured)
+- `npm run lint` - Run ESLint
+
+## Project Structure
+
+```
+React_Project_Quiz/
+├── src/
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── ProgressBar.jsx
+│   │   └── ...
+│   ├── pages/
+│   │   ├── Quiz.jsx
+│   │   ├── ErrorPage.jsx
+│   │   └── ...
+│   ├── store/
+│   │   └── QuizStore.js
+│   ├── hooks/
+│   │   └── quizApi.js
+│   ├── router/
+│   │   └── router.jsx
+│   └── main.jsx
+├── public/
+├── index.html
+├── vite.config.js
+└── package.json
+```
+
+### Key Directories
+- `components/` - Reusable UI components
+- `pages/` - Route components
+- `store/` - Zustand state management
+- `hooks/` - Custom React hooks
+- `router/` - React Router configuration
+
+## License
+Feel free to use this project for your own purposes.
+
+---
+Made with ❤️ by [Elzbieta Kukulka]
+
+---
+Made with ❤️ by [Your Name]
