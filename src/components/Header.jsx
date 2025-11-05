@@ -5,11 +5,11 @@ export default function Header() {
     <nav className="flex justify-between h-[15vh] w-full xl:w-7xl text-white pl-[3vw] pr-[3vw] mx-auto">
       <Link
         to="/"
-        className="flex items-center font-libertinus text-[25px] sm:text-[30px] cursor-pointer"
+        className="flex items-center font-londrina text-[30px] sm:text-[35px] cursor-pointer"
       >
         Trivia Quiz
       </Link>
-      <div className="flex flex-col justify-center items-end sm:flex-row sm:items-center gap-4 font-raleway uppercase text-[20px] cursor-pointer">
+      <div className="flex flex-row justify-center items-center gap-4 font-raleway uppercase text-[18px] cursor-pointer">
         <Link to="/">Hjem</Link>
         <Link to="scoreboard">Scoreboard</Link>
       </div>
