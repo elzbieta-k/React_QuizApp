@@ -87,6 +87,3 @@ Feel free to use this project for your own purposes.
 
 ---
 Made with ❤️ by [Elzbieta Kukulka]
-
----
-Made with ❤️ by [Your Name]
